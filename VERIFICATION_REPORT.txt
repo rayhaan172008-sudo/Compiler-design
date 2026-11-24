@@ -1,0 +1,29 @@
+Compiler Design Lab verification report
+
+Tool installation:
+- MSYS2 present at C:\msys64.
+- GCC installed and version verified: GCC 16.2.0 (MSYS2 UCRT64).
+- Native WinFlexBison installed and version verified: win_flex 2.6.4.
+- GCC and WinFlexBison directories were added to the Windows user PATH.
+
+Compilation verification:
+- Experiments 1-21: PASS.
+- Experiments 22, 31, 33 and 34 initially had Flex pattern errors; their source
+  patterns were corrected and all four then compiled successfully.
+- Experiments 22-40: PASS after the corrections.
+- Overall compilation result: 40/40 PASS.
+
+Execution verification:
+- The programs were executed through Windows CMD using the generated batch
+  scripts and representative inputs.
+- Experiments 1-40 completed with PASS in RUN_REPORT.txt.
+- Experiment 11 initially exposed an EOF-loop issue when piped input was not
+  available. The menu now exits safely on EOF and the scripted menu test was
+  rerun successfully.
+- Direct PowerShell process launching was blocked by Windows Application
+  Control, but the requested normal CMD workflow completed successfully.
+
+Automation:
+- Individual scripts: run_exp_01.bat through run_exp_40.bat.
+- Master script: run_all.bat.
+- The master script writes RUN_REPORT.txt and per-experiment logs under _build.
